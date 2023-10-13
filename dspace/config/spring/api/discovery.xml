@@ -164,10 +164,8 @@
             <list>
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
-                <!-- <ref bean="searchFilterIssued" /> -->
-                <ref bean="searchFilterTitle" />
-                <ref bean="searchFilterTemporal" />
-                <!-- <ref bean="searchFilterContentInOriginalBundle"/> -->
+                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
             </list>
         </property>
@@ -179,9 +177,8 @@
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
-                <!-- <ref bean="searchFilterIssued" /> -->
-                <ref bean="searchFilterTemporal" />
-                <!-- <ref bean="searchFilterContentInOriginalBundle"/> -->
+                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
                 <ref bean="searchFilterEntityType"/>
@@ -197,12 +194,10 @@
             <bean class="org.dspace.discovery.configuration.DiscoverySortConfiguration">
                 <property name="sortFields">
                     <list>
-                        <!-- <ref bean="sortScore" />
-                        <ref bean="sortDateIssued" /> -->
-                        <ref bean="sortDateAccessioned" />
-                        <ref bean="sortDateAccessionedAsc" />
+                        <ref bean="sortScore" />
                         <ref bean="sortTitle" />
-                        <ref bean="sortTitleDesc" />
+                        <ref bean="sortDateIssued" />
+                        <ref bean="sortDateAccessioned"/>
                     </list>
                 </property>
             </bean>
@@ -317,9 +312,8 @@
             <list>
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterTitle" />
-                <ref bean="searchFilterTemporal" />
-                <!-- <ref bean="searchFilterContentInOriginalBundle"/> -->
+                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
             </list>
         </property>
@@ -332,8 +326,7 @@
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
-                <ref bean="searchFilterTemporal" />
-                <!-- <ref bean="searchFilterContentInOriginalBundle"/> -->
+                <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
                 <ref bean="searchFilterEntityType"/>
@@ -457,7 +450,6 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
@@ -598,7 +590,6 @@
                 <ref bean="searchFilterDiscoverable" />
                 <ref bean="searchFilterWithdrawn" />
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
@@ -1115,7 +1106,6 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
@@ -1186,7 +1176,6 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
@@ -2234,19 +2223,15 @@
         <property name="pageSize" value="10"/>
     </bean>
 
-    <bean id="searchFilterTitle" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterTitle" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="title"/>
         <property name="metadataFields">
             <list>
                 <value>dc.title</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="VALUE"/>
-        <property name="sortOrderFilterPage" value="VALUE"/>
         <property name="isOpenByDefault" value="true"/>
         <property name="pageSize" value="10"/>
-        <property name="exposeMinAndMaxValue" value="true"/>
     </bean>
 
     <bean id="searchFilterIsAuthorOfPublicationRelation" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
@@ -2314,8 +2299,8 @@
             </list>
         </property>
         <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="VALUE"/>
-        <property name="sortOrderFilterPage" value="VALUE"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
         <property name="isOpenByDefault" value="true"/>
         <property name="pageSize" value="10"/>
         <property name="exposeMinAndMaxValue" value="true"/>
@@ -2343,7 +2328,7 @@
             </list>
         </property>
         <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="VALUE"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
         <property name="sortOrderFilterPage" value="COUNT"/>
         <property name="splitter" value="::"/>
 
@@ -2758,19 +2743,6 @@
         <property name="pageSize" value="10"/>
     </bean>
 
-    <!-- Custom search filters -->
-    <bean id="searchFilterTemporal" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-        <property name="indexFieldName" value="datetemporal"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.coverage.temporal</value>
-            </list>
-        </property>
-        <property name="facetLimit" value="5"/>
-        <property name="isOpenByDefault" value="true"/>
-        <property name="sortOrderSidebar" value="VALUE"/>
-        <property name="sortOrderFilterPage" value="VALUE"/>
-    </bean>
 
     <!-- Used only to READ "submitter" facets (managed programmatically at SolrServiceImpl) -->
     <bean id="searchFilterSubmitter"
@@ -2896,17 +2868,6 @@
         <property name="type" value="date"/>
         <property name="defaultSortOrder" value="desc"/>
     </bean>
-    <bean id="sortDateAccessionedAsc" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-        <property name="metadataField" value="dc.date.accessioned"/>
-        <property name="type" value="date"/>
-        <property name="defaultSortOrder" value="asc"/>
-    </bean>
-    <!-- Custom bean -->
-    <bean id="sortDateTemporal" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-        <property name="metadataField" value="dc.coverage.temporal"/>
-        <property name="type" value="date"/>
-        <property name="defaultSortOrder" value="asc"/>
-    </bean>
 
     <bean id="sortFamilyName" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
         <property name="metadataField" value="person.familyName"/>
@@ -2970,11 +2931,6 @@
     <bean id="sortTitleAsc" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
         <property name="metadataField" value="dc.title"/>
         <property name="defaultSortOrder" value="asc"/>
-    </bean>
-
-    <bean id="sortTitleDesc" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-        <property name="metadataField" value="dc.title"/>
-        <property name="defaultSortOrder" value="desc"/>
     </bean>
 
     <bean id="sortDateIssuedDesc" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
