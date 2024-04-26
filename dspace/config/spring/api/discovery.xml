@@ -206,6 +206,7 @@
                 </property>
             </bean>
         </property>
+        
         <!--Any default filter queries, these filter queries will be used for all
             queries done by discovery for this configuration -->
         <property name="defaultFilterQueries">
