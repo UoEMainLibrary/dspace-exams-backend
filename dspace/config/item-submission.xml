@@ -235,6 +235,15 @@
             <processing-class>org.dspace.app.rest.submit.step.ShowIdentifiersStep</processing-class>
             <type>identifiers</type>
         </step-definition>
+
+        <!-- Custom Definitions -->
+        <step-definition id="examform">
+            <heading>submit.progressbar.describe.stepone</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+        <!-- Custom Definitions end -->
+
     </step-definitions>
 
     <!-- The submission-definitions map lays out the detailed definition of -->
@@ -264,7 +273,7 @@
             <!--<step id="identifiers"/>-->
             <!--Step will be to Describe the item. -->
             <step id="traditionalpageone"/>
-            <step id="traditionalpagetwo"/>
+            <!-- <step id="traditionalpagetwo"/> -->
 
             <!-- Uncomment this step to allow the user to embargo or access restrict the entire item -->
             <!-- <step id="itemAccessConditions"/> -->
