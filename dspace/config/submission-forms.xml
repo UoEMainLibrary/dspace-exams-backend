@@ -92,7 +92,7 @@
             <row>
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>covergae</dc-element>
+                    <dc-element>coverage</dc-element>
                     <dc-qualifier>temporal</dc-qualifier>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
