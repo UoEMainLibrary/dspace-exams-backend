@@ -14,7 +14,7 @@
     <!-- Each form set contains an ordered set of pages; each page defines    -->
     <!-- one submission metadata entry screen. Each page has an ordered list  -->
     <!-- of field definitions, Each field definition corresponds to one       -->
-    <!-- metadata entry (a so-called row), which has a DC element name, a     -->
+    <!-- metadata entry (a so-called row), which has a DC elemeGnt name, a     -->
     <!-- displayed label, a text string prompt which is called a hint, and    -->
     <!-- an input-type. Each field also may hold optional elements: DC        -->
     <!-- qualifier name, a repeatable flag, and a text string whose presence  -->
@@ -94,7 +94,6 @@
                     <dc-schema>dc</dc-schema>
                     <dc-element>coverage</dc-element>
                     <dc-qualifier>temporal</dc-qualifier>
-                    <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Year</label>
                     <input-type value-pairs-name="exam_year">dropdown</input-type>
@@ -109,7 +108,6 @@
                     <dc-schema>dc</dc-schema>
                     <dc-element>description</dc-element>
                     <dc-qualifier>version</dc-qualifier>
-                    <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Version</label>
                     <input-type value-pairs-name="exam_type">dropdown</input-type>
@@ -1981,7 +1979,7 @@
         </value-pairs>
 
         <!-- Custom pairs -->
-        <value-pairs value-pairs-name="exam_year" dc-term="date">
+        <value-pairs value-pairs-name="exam_year" dc-term="cover">
             <pair>
                 <displayed-value>2004/2005</displayed-value>
                 <stored-value>2004/2005</stored-value>
