@@ -2052,6 +2052,46 @@
                 <displayed-value>2023/2024</displayed-value>
                 <stored-value>2023/2024</stored-value>
             </pair>
+            <pair>
+                <displayed-value>2024/2025</displayed-value>
+                <stored-value>2024/2025</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2025/2026</displayed-value>
+                <stored-value>2025/2026</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2026/2027</displayed-value>
+                <stored-value>2026/2027</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2027/2028</displayed-value>
+                <stored-value>2027/2028</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2028/2029</displayed-value>
+                <stored-value>2028/2029</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2030/2031</displayed-value>
+                <stored-value>2030/2031</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2031/2032</displayed-value>
+                <stored-value>2031/2032</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2032/2033</displayed-value>
+                <stored-value>2032/2033</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2033/2034</displayed-value>
+                <stored-value>2033/2034</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>2034/2035</displayed-value>
+                <stored-value>2034/2035</stored-value>
+            </pair>
         </value-pairs>
 
         <value-pairs value-pairs-name="exam_type" dc-term="description">
